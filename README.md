@@ -2,7 +2,7 @@
 
 An AI-powered resume screening system that intelligently matches candidates to job descriptions using multi-stage LLM analysis with evidence-based scoring.
 
-<h3><a href="https://github.com/jayesh3103/hiresift">Github Repo: Link</a></h3>
+<h3><a href="https://github.com/jayesh3103/Smart-Resume-Screener">Github Repo: Link</a></h3>
 
 ## 🎥 Demo Video
 
@@ -121,7 +121,7 @@ The pipeline executes in the following order:
 ### Stage 1: Job Description Deconstruction
 
 - **Model**: `llama-3.1-8b-instant`
-- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/hiresift/blob/main/analyzer/prompts.py#L2)
+- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/Smart-Resume-Screener/blob/main/analyzer/prompts.py#L2)
 - **Purpose**: To parse an unstructured job description into a structured JSON rubric. This is done once per job posting.
 
 This initial stage identifies the core requirements of the role. The prompt is designed to:
@@ -136,7 +136,7 @@ This initial stage identifies the core requirements of the role. The prompt is d
 ### Stage 2: Combined Skill Analysis & Summary
 
 - **Model**: `groq/compound`
-- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/hiresift/blob/main/analyzer/prompts.py#L47)
+- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/Smart-Resume-Screener/blob/main/analyzer/prompts.py#L47)
 - **Purpose**: The core of the system. This stage analyzes the resume against the structured job requirements, assigns proficiency scores with evidence, and generates a summary.
 
 This is the most complex stage, guided by several key principles:
@@ -166,7 +166,7 @@ A four-tier system rates each skill match:
 ### Stage 3: Holistic Resume Parsing
 
 - **Model**: `llama-3.1-8b-instant`
-- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/hiresift/blob/main/analyzer/prompts.py#L137)
+- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/Smart-Resume-Screener/blob/main/analyzer/prompts.py#L137)
 - **Purpose**: To extract all non-skill-related structured data from the resume text.
 
 This prompt gathers the foundational data points needed for a comprehensive evaluation:
@@ -180,7 +180,7 @@ This prompt gathers the foundational data points needed for a comprehensive eval
 ### Stage 4: Experience Calculation
 
 - **Model**: `llama-3.1-8b-instant`
-- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/hiresift/blob/main/analyzer/prompts.py#L182)
+- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/Smart-Resume-Screener/blob/main/analyzer/prompts.py#L182)
 - **Purpose**: To accurately calculate the candidate's total years of experience.
 
 Using the `experience_and_projects` list from the previous stage, this specialized prompt:
@@ -194,7 +194,7 @@ Using the `experience_and_projects` list from the previous stage, this specializ
 ### Stage 5: Resume Quality Assessment
 
 - **Model**: `llama-3.1-8b-instant`
-- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/hiresift/blob/main/analyzer/prompts.py#L195)
+- **Prompt**: [`analyzer/prompts.py`](https://github.com/jayesh3103/Smart-Resume-Screener/blob/main/analyzer/prompts.py#L195)
 - **Purpose**: To evaluate the **content quality** of the resume, not its visual formatting.
 
 This final stage provides a score that acts as a multiplier on the candidate's final match score, rewarding well-documented experience. The assessment focuses on:
@@ -297,8 +297,8 @@ This configuration balances cost, speed, and quality for production use.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/jayesh3103/hiresift.git
-   cd hiresift
+   git clone https://github.com/jayesh3103/Smart-Resume-Screener.git
+   cd Smart-Resume-Screener
    ```
 
 2. **Navigate to backend directory**
