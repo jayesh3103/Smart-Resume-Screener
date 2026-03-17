@@ -1,4 +1,4 @@
-# HireSift
+# Smart Resume Screener
 
 An AI-powered resume screening system that intelligently matches candidates to job descriptions using multi-stage LLM analysis with evidence-based scoring.
 
@@ -10,7 +10,7 @@ An AI-powered resume screening system that intelligently matches candidates to j
 
 ## 🎯 Overview
 
-HireSift automates the initial candidate screening process by:
+Smart Resume Screener automates the initial candidate screening process by:
 
 - Extracting structured data from PDF resumes using LLM-based parsing
 - Analyzing job descriptions to identify must-have and nice-to-have skills

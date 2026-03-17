@@ -16,7 +16,7 @@ from .database import SessionLocal, engine
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="HireSift API",
+    title="Smart Resume Screener API",
     description="An API to screen resumes against job descriptions using AI.",
     version="1.0.0"
 )
